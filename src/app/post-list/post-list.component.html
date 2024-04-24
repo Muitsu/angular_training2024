@@ -1,0 +1,61 @@
+<h1 >Post List</h1>
+
+<table mat-table [dataSource]="listAllPosts">
+
+    <!-- Column Definitions -->
+    <ng-container matColumnDef="User">
+        <th mat-header-cell *matHeaderCellDef> 
+            User
+        </th>
+        <td mat-cell *matCellDef="let post"> 
+            {{post.userId}} 
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef> 
+            Id
+        </th>
+        <td mat-cell *matCellDef="let post"> 
+            {{post.id}} 
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Title">
+        <th mat-header-cell *matHeaderCellDef> 
+            Title
+        </th>
+        <td mat-cell *matCellDef="let post"> 
+            {{post.title}} 
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Body">
+        <th mat-header-cell *matHeaderCellDef> 
+            Body
+        </th>
+        <td mat-cell *matCellDef="let post"> 
+            {{post.body}} 
+        </td>
+    </ng-container>    
+    <!-- Header and Rows -->
+    <tr mat-header-row *matHeaderRowDef="columnToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnToDisplay;"></tr>
+</table>
+
+<!-- <table class="table-table-bordered">
+    <thead>
+        <th>User</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+    </thead>
+    <tbody>
+    @for (post of listAllPosts; track $index) {
+        <td> {{post.userId}}</td>
+        <td> {{post.id}}</td>
+        <td> {{post.title}}</td>
+        <td> {{post.body}}</td>
+    }
+    </tbody> 
+</table> -->

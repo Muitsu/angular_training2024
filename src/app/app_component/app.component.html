@@ -1,0 +1,82 @@
+<h1>Directive - If</h1>
+
+<p *ngIf="isNameJhon">{{name}}</p><hr>
+
+<h1>Directive = Angular 17 - if else</h1>
+@if(isNameJhon){
+  Name = {{name}}
+}@else if(isJhonSister){
+  His Sister : {{name}}
+}@else {
+  Somebody Else : {{name}}
+}
+<hr>
+
+<p>
+<h1>Directive < Angular 17 - if else</h1>
+<!-- if -->
+<p *ngIf="isNameJhon; else otherId">{{name}}</p>
+<!-- else -->
+<ng-template #otherId><p>Other</p></ng-template>
+
+<hr><p>
+<h1>Directive looping</h1>
+<strong>Array of string</strong>
+<ul>
+  <li *ngFor="let hero of heroes">{{hero}}</li>
+</ul>
+
+<strong>Array of object</strong>
+<ul>
+  <li *ngFor="let hero of heroes2">
+    {{hero.name}} : {{hero.team}}
+  </li>
+</ul>
+
+<hr><p>
+<h1>Directive - Siwtch case</h1>
+
+<strong>Switch case < angluar 17</strong>
+<div  [ngSwitch]="hero.team">
+<div *ngSwitchCase="'avenger'">
+  {{hero.name}} is Avenger
+</div>
+  <div *ngSwitchCase="'villain'">{{hero.name}} is Villain</div>
+  <div *ngSwitchDefault="">Normal People</div>
+</div>
+
+<strong>Switch case for angluar 17</strong>
+@switch (hero.team) {
+  @case ("avenger") {
+    <p>This is avenger</p>
+  }
+  @case ("avenger") {
+    <p>This is villain</p>
+  }
+  @default {
+    <p>Normal People</p>
+  }
+}
+
+<hr>
+<h1>Pipe</h1>
+<strong>Build in Pipe</strong>
+<br>
+{{0.12345 | percent}} - percent
+<br>
+{{100|currency}} - currency
+<br>
+{{100|currency: 'RM'}} - currency RM
+<br>
+{{heroes|slice:1:3}} - slice of heroes
+<br>
+{{today|date}} - date format
+<br>
+{{hero|json}} - JSON representation
+<br>
+<strong>Custom Pipe</strong>
+<br>
+{{"Hello world"|summary:7}}
+<hr>
+<h1>Custom Directive</h1>
+<div appCopyright></div>

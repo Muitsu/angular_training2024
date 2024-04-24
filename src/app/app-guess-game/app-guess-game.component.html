@@ -1,0 +1,9 @@
+
+<h1>Guess The Number</h1>
+<mat-form-field class="example-full-width">
+    <input matInput #userInput (change)="onChange(userInput.value)"  placeholder="Enter Number">
+</mat-form-field>
+
+<button (click)="onGuess()" mat-flat-button color="primary">Guess!</button>
+<br>
+<p>Number of trials: {{trials}}</p>
